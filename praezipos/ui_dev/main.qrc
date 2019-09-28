@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="global">
+    <file>img/load.png</file>
+    <file>img/fork.png</file>
+    <file>img/lift.png</file>
+    <file>img/willebg.png</file>
+    <file>png/left.png</file>
+    <file>png/ok.png</file>
+    <file>png/right.png</file>
+    <file>png/fail.png</file>
+  </qresource>
+</RCC>
