@@ -61,9 +61,6 @@ def cleanup():
 # One global RevPiModIO instance for all modules and classes
 rpi = revpimodio2.RevPiModIO(autorefresh=True)
 
-# Configure IO of profinet device
-rpi.io.b_position1.replace_io("position", "H", byteorder="big")
-
 # Configure IO of panel device
 rpi.io.p_byte1.replace_io("p_online", "?", bit=0)
 

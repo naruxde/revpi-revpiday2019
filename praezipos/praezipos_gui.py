@@ -17,6 +17,8 @@ class PraeziPos(QtWidgets.QMainWindow, Ui_frm_main):
         super(PraeziPos, self).__init__()
         self.setupUi(self)
 
+        self.adj_load = 75
+
         # Setup start positions
         take_back = 550
         self.wid_fork.move(self.wid_fork.x(), self.wid_fork.y() + take_back)
@@ -79,7 +81,7 @@ class PraeziPos(QtWidgets.QMainWindow, Ui_frm_main):
             # Forklift is coming
 
             self.wid_lift.move(
-                self.wid_lift_geo.x() + int(self.rm.rpi.io.load_pos.value / 100),
+                self.wid_lift_geo.x() + int(self.rm.rpi.io.load_pos.value / self.adj_load),
                 self.wid_lift.y()
             )
 
@@ -117,11 +119,11 @@ class PraeziPos(QtWidgets.QMainWindow, Ui_frm_main):
 
         # Move load and fork
         self.wid_fork.move(
-            self.wid_fork_geo.x() + int(position / 100),
+            self.wid_fork_geo.x() + int(position / self.adj_load),
             self.wid_fork.y()
         )
         self.wid_load.move(
-            self.wid_load_geo.x() + int(position / 100),
+            self.wid_load_geo.x() + int(position / self.adj_load),
             self.wid_load.y()
         )
 
